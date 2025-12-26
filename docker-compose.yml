@@ -21,7 +21,7 @@ services:
 
       # Render te da una URL pública, la usaremos aquí más tarde
       # de momento este valor no importa mucho porque lo sobreescribiremos en LocalSettings.php
-      MEDIAWIKI_SERVER: "https://example.onrender.com"
+      MEDIAWIKI_SERVER: "https://wiki-mistral-udl.onrender.com"
 
     volumes:
       # Carpeta para los archivos subidos (imágenes, etc.)
