@@ -1,5 +1,5 @@
-/dokuwiki.tgz
-.DS_Store
-*.swp
-*.swo
-node_modules/
+.env
+LocalSettings.php
+images/
+*.log
+db_data/

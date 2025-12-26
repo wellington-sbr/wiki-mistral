@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mediawiki:
+    image: mediawiki:latest
+    container_name: mediawiki
+    ports:
+      - "80:80"
+    environment:
+      # Datos de conexión a Neon (los pondremos como variables en Render)
+      MEDIAWIKI_DB_TYPE: postgres
+      MEDIAWIKI_DB_HOST: ${DB_HOST}
+      MEDIAWIKI_DB_PORT: 5432
+      MEDIAWIKI_DB_NAME: ${DB_NAME}
+      MEDIAWIKI_DB_USER: ${DB_USER}
+      MEDIAWIKI_DB_PASSWORD: ${DB_PASSWORD}
+
+      # Ajustes básicos de MediaWiki
+      MEDIAWIKI_SITE_NAME: "Mistral Wiki"
+      MEDIAWIKI_SCRIPT_PATH: /w
+
+      # Render te da una URL pública, la usaremos aquí más tarde
+      # de momento este valor no importa mucho porque lo sobreescribiremos en LocalSettings.php
+      MEDIAWIKI_SERVER: "https://example.onrender.com"
+
+    volumes:
+      # Carpeta para los archivos subidos (imágenes, etc.)
+      - ./images:/var/www/html/images
+      # Archivo de configuración de MediaWiki
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+
+    restart: always
