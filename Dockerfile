@@ -1,10 +1,9 @@
 FROM mediawiki:latest
 
-# Copiar script
-COPY init.sh /usr/local/bin/init.sh
-RUN chmod +x /usr/local/bin/init.sh
+# Instalar herramientas
+RUN apt-get update && apt-get install -y postgresql-client && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 80
 
-# Ejecutar script al iniciar
-CMD ["/usr/local/bin/init.sh"]
+# Arranca directamente Apache
+CMD ["apache2-foreground"]
