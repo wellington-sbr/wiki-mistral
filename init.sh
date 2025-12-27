@@ -10,7 +10,7 @@ RENDER_EXTERNAL_URL=${RENDER_EXTERNAL_URL:-localhost}
 echo "Iniciando MediaWiki con BD: $DB_HOST"
 
 # Crear LocalSettings.php
-cat > /var/www/html/LocalSettings.php <<'EOF'
+cat > /var/www/html/LocalSettings.php <<EOF
 <?php
 if ( !defined( 'MEDIAWIKI' ) ) {
     exit;
