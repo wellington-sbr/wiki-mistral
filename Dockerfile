@@ -10,7 +10,7 @@ ENV MEDIAWIKI_DB_USER=${DB_USER}
 ENV MEDIAWIKI_DB_PASSWORD=${DB_PASSWORD}
 
 # Copiar archivo de configuración local cuando esté disponible
-COPY LocalSettings.php /var/www/html/LocalSettings.php 2>/dev/null || true
+COPY LocalSettings.php /var/www/html/LocalSettings.php
 
 # Exponer puerto 80 (HTTP)
 EXPOSE 80
