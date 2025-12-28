@@ -7,7 +7,7 @@ RUN apk add --no-cache git
 
 # Clonar el repositorio oficial de Wiki.js
 RUN git clone --depth 1 https://github.com/Requarks/wiki.git . && \
-    npm install --only=production
+    npm install --only=production --legacy-peer-deps
 
 # Crear directorio de datos
 RUN mkdir -p /wiki/data
