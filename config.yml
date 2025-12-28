@@ -6,7 +6,7 @@ db:
   host: ep-odd-queen-ag68f36e.c-2.eu-central-1.aws.neon.tech
   port: 5432
   user: neondb_owner
-  password: npg_p75cgGwkZAxo
+  password: 'npg_p75cgGwkZAxo'
   db: neondb
   ssl: true
   logging: false
