@@ -61,13 +61,6 @@ $wgGroupPermissions['user']['edit'] = true;
 $wgGroupPermissions['user']['upload'] = true;
 
 // =====================================================
-// EXTENSIONES
-// =====================================================
-
-wfLoadExtension( 'Cite' );
-wfLoadExtension( 'CiteVisualEditor' );
-
-// =====================================================
 // CLAVES DE SEGURIDAD
 // =====================================================
 
