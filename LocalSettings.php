@@ -13,7 +13,7 @@ $wgDBpassword = "npg_p75cgGwkZAxo";
 $wgDBssl = true;
 $wgDBsslmode = 'require';
 
-$wgServer = "mediawiki-mistral.onrender.com";
+$wgServer = "https://mediawiki-mistral.onrender.com";
 $wgScriptPath = "/w";
 
 $wgSitename = "Mistral Wiki";
