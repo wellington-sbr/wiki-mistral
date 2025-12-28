@@ -9,7 +9,9 @@ RUN apk add --no-cache git
 RUN git clone --depth 1 https://github.com/Requarks/wiki.git . && \
     npm install --only=production --legacy-peer-deps
 
-# Crear directorio de datos
+# Copiar config.yml desde tu repo
+COPY config.yml /wiki/config.yml
+
 RUN mkdir -p /wiki/data
 
 # Exponer puerto
