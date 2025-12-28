@@ -19,8 +19,8 @@ php maintenance/install.php \
   --installdbpass="npg_p75cgGwkZAxo" \
   --scriptpath="/w" \
   --lang="es" \
-  --pass="admin123" \
-  "Mistral Wiki" "admin"
+  --pass="Programari321" \
+  "Mistral Wiki" "wellin"
 
 echo "MediaWiki installation complete"
 
