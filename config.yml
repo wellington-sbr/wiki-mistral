@@ -3,7 +3,7 @@ bindIP: 0.0.0.0
 
 db:
   type: postgres
-  host: ep-odd-queen-ag68f36e-pooler.c-2.eu-central-1.aws.neon.tech
+  host: ep-odd-queen-ag68f36e.c-2.eu-central-1.aws.neon.tech
   port: 5432
   user: neondb_owner
   password: npg_p75cgGwkZAxo
@@ -16,14 +16,9 @@ db:
     allowConsole: false
 
 redis:
-  host: localhost
+  host: 127.0.0.1
   port: 6379
   password: null
   db: 0
   ssl: false
-
-auth:
-  audience: null
-  tokenExpiration: 7d
-  tokenRenewal: 1d
 
