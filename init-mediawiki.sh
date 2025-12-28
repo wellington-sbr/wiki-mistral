@@ -1,32 +1,29 @@
 #!/bin/bash
 set -e
 
-echo "Initializing MediaWiki..."
+echo "Initializing MediaWiki with PostgreSQL (Supabase)..."
 
-# Esperar a que la BD esté lista
-sleep 2
+sleep 3
 
-# Ejecutar MediaWiki install
+# Ejecutar instalador de MediaWiki
 cd /var/www/html
+
 php maintenance/install.php \
   --dbtype=postgres \
-  --dbserver="ep-odd-queen-ag68f36e-pooler.c-2.eu-central-1.aws.neon.tech" \
-  --dbname="mediawiki_db" \
-  --dbuser="neondb_owner" \
-  --dbpass="npg_p75cgGwkZAxo" \
-  --dbport=5432 \
-  --installdbuser="neondb_owner" \
-  --installdbpass="npg_p75cgGwkZAxo" \
+  --dbserver="${DB_HOST}" \
+  --dbport="${DB_PORT}" \
+  --dbname="${DB_NAME}" \
+  --dbuser="${DB_USER}" \
+  --dbpass="${DB_PASSWORD}" \
   --scriptpath="/w" \
   --lang="es" \
   --pass="Programari321" \
   "Mistral Wiki" "wellin"
 
-echo "MediaWiki installation complete"
+echo "Installation complete"
 
-# Copiar el LocalSettings.php generado
 if [ -f "/var/www/html/LocalSettings.php" ]; then
-    echo "LocalSettings.php found"
+    echo "LocalSettings.php created"
     chmod 644 /var/www/html/LocalSettings.php
     chown www-data:www-data /var/www/html/LocalSettings.php
 fi
