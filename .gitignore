@@ -1,5 +1,8 @@
-/dokuwiki.tgz
-.DS_Store
-*.swp
-*.swo
 node_modules/
+.env
+.env.local
+*.log
+.DS_Store
+.vscode/
+.idea/
+config.yml
