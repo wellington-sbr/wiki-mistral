@@ -1,8 +1,7 @@
 FROM mediawiki:latest
 
 RUN apt-get update && \
-    apt-get install -y \
-    mysql-client && \
+    apt-get install -y postgresql-client && \
     rm -rf /var/lib/apt/lists/*
 
 COPY init-mediawiki.sh /usr/local/bin/init-mediawiki.sh
