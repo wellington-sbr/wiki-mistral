@@ -22,3 +22,7 @@ redis:
   db: 0
   ssl: false
 
+auth:
+  audience: null
+  tokenExpiration: 7d
+  tokenRenewal: 1d
