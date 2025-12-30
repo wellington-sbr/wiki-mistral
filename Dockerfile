@@ -1,14 +1,28 @@
 FROM php:8.2-apache
 
-# Instalar extensiones PHP necesarias
+# Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y \
     libpq-dev \
+    libicu-dev \
     imagemagick \
     libmagickwand-dev \
     git \
     wget \
     curl \
-    && docker-php-ext-install pgsql pdo_pgsql
+    zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalar extensiones PHP REQUERIDAS por MediaWiki 1.43
+RUN docker-php-ext-install \
+    pgsql \
+    pdo_pgsql \
+    intl \
+    xml \
+    mbstring \
+    json \
+    fileinfo \
+    gd \
+    && docker-php-ext-configure intl
 
 # Habilitar módulos Apache
 RUN a2enmod rewrite
@@ -24,3 +38,5 @@ RUN wget https://releases.wikimedia.org/mediawiki/1.43/mediawiki-1.43.0.tar.gz &
 RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
+
+CMD ["apache2-foreground"]
